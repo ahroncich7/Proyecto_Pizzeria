@@ -1,0 +1,25 @@
+{
+    "name": "proyecto_pizzeria",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "serve": "http-server -c-1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ahroncich7/Proyecto_Pizzeria.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ahroncich7/Proyecto_Pizzeria/issues"
+    },
+    "homepage": "https://github.com/ahroncich7/Proyecto_Pizzeria#readme",
+    "devDependencies": {
+        "http": "0.0.1-security",
+        "http-server": "^14.1.0"
+    },
+    "dependencies": {}
+}

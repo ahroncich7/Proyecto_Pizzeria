@@ -8,3 +8,4 @@ const apiData = [
     ["Post product *required 'name,description,price,foto,available,category_id' in the body","https://laomingcode-node-mysql.herokuapp.com/api/product/"]
 
 ]
+console.table(apiData);

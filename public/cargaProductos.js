@@ -1,7 +1,7 @@
 export function crearTarjetaModal(product) {
-    document.getElementById("modal_img").src = product.url;
-    document.getElementById("modal_subtitle").textContent = `${product.nombre} ${product.precio}`;
-    document.getElementById("modal_descripcion").textContent = product.descripcion;
+    document.getElementById("carga-productos-img").src = product.url;
+    document.getElementById("carga-productos-subtitle").textContent = `${product.nombre} ${product.precio}`;
+    document.getElementById("carga-productos-descripcion").textContent = product.descripcion;
 };
 
 export function crearTarjeta(product, sectionElement) {

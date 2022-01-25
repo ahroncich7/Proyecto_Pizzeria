@@ -4,10 +4,14 @@ export function crearTarjetaModal(product) {
     document.getElementById("carga-productos-descripcion").textContent = product.descripcion;
 };
 
-export function crearTarjeta(product, sectionElement) {
-    let elementCard = `<div class="product__cards">
-                            <img src=${product.url} alt="${product.nombre}" class="product__card__img">
-                            <h3 class="product__card__subtitle">${product.nombre}</h3>
-                        </div>`;
-    sectionElement.innerHTML += elementCard;
+export function crearTarjetas(products, sectionElement) {
+    let elementCard = "";
+    products.forEach(element => {
+        elementCard += `<div class="product__cards">
+                            <img src=${element.url} alt="${element.nombre}" class="product__card__img">
+                            <h3 class="product__card__subtitle">${element.nombre}</h3>
+                        </div>`
+    });
+
+    sectionElement.innerHTML = elementCard;
 };

@@ -30,7 +30,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `description`, `price`, `foto`, `available`, `category_id`) VALUES
 (1, 'Pizza Jamon y Morron', 'Ingredientes: Jamon, Pimiento morron, Aceitunas, Masa don remolo ', 15, NULL, 1, 1),
-(2, 'Pizza Muzzarella', 'Ingredientes: Queso mozzarella, Aceitunas, Masa don remolo', 15, NULL, 1, 1),
+(2, 'Pizza Muzzarella', 'Ingredientes: Queso muzzarella, Aceitunas, Masa don remolo', 15, NULL, 1, 1),
 (3, 'Pizza Napolitana', 'Ingredientes: Tomate fresco, Aceitunas, Queso parmesano, Masa don remolo', 17, NULL, 1, 1),
 (4, 'Empanada de Atun', 'Ingredientes: Atun especial, Masa don remolo', 6, NULL, 1, 2),
 (5, 'Empanada de Carne', 'Ingredientes: Carne especial, Masa don remolo', 8, NULL, 1, 2),

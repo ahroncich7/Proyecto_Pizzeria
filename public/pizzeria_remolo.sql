@@ -23,7 +23,7 @@ CREATE TABLE `product` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `foto` varchar(255) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `available` tinyint(1) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

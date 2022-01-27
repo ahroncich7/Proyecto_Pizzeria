@@ -15,6 +15,7 @@ function fileChange() {
 
   $.ajax(settings).done(function (response) {
     var info = JSON.parse(response);
+    console.log(info);
     let picture = document.getElementById('picture')
     picture.value = info.data.url
     console.log(picture.value);

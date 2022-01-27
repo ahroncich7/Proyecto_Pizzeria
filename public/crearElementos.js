@@ -16,6 +16,6 @@ export function crearTarjetas(products, sectionElement) {
     sectionElement.innerHTML = elementCard;
 };
 
-export function mostrarTarjeta() {
+export function mostrarTarjetaModal() {
     document.querySelector(".modal").classList.remove("oculto");
 }

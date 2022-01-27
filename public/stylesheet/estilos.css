@@ -9,6 +9,11 @@
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     background-color: #E2B575;
+    overflow-x: hidden;
+}
+
+.oculto {
+    display: none !important;
 }
 
 .hero {
@@ -44,6 +49,21 @@ li {
     grid-auto-flow: column;
     gap: 2em;
     margin-left: auto;
+}
+
+.nav__links__menu__container {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.nav__links__notif {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 5px;
+    background-color: rgb(177, 5, 5);
+    font-size: 0.7em;
+    text-align: center;
 }
 
 .nav__links {
@@ -93,6 +113,10 @@ li {
     align-self: center;
 }
 
+.modal__confirm__button {
+    border-radius: 3px;
+}
+
 
 /* Main */
 
@@ -122,30 +146,31 @@ main {
 
 /*dish*/
 
-.dish {
+.product {
     margin-top: 2em;
     background-color: #2f4b0e6b;
     height: max-content;
 }
 
-.dish__icon {
+.product__icon {
     margin: 1em auto;
     display: block;
 }
 
-.dish__board {
+.product__board {
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 2em;
 }
 
-.dish__products {
+.product__meals {
     display: flex;
     gap: 2em;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.dish__cards {
+.product__cards {
     max-width: 60%;
     height: max-content;
     background-color: #2f4b0e;
@@ -153,11 +178,26 @@ main {
     text-align: center;
 }
 
-.dish__card__img {
+.product__card__img {
     width: 500px;
     max-width: 100%;
 }
 
-.dish__card__subtitle {
+.product__card__subtitle {
     color: #FFF;
+}
+
+
+/*Media queries*/
+
+@media (max-width: 400px) {
+    .nav__links__menu {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        padding-left: 0;
+    }
+    .hero__title {
+        font-size: 1em;
+    }
 }

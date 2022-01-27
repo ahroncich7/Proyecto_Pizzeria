@@ -19,13 +19,11 @@
             </div>
             <ul class="nav__links__menu">
                 <li>
-                    <a href="#" class="nav__links">Inicio</a>
-                </li>
-                <li>
                     <a href="#" class="nav__links">Productos</a>
                 </li>
-                <li>
-                    <a href="#" class="nav__links">Contacto</a>
+                <li class="nav__links__menu__container">
+                    <a href="#" class="nav__links">Pedido</a>
+                    <span class="nav__links__notif oculto">1</span>
                 </li>
             </ul>
         </div>
@@ -36,55 +34,50 @@
             <h2 class="phrase__subtitle">Hace tu pedido:</h2>
         </article>
 
-        <section class="container dish">
-            <div class="dish__board">
-                <div class="dish__icons">
-                    <img src="images/dish.svg" alt="" class="dish__icon">
+        <section class="container product">
+            <div class="product__board">
+                <div class="product__icons">
+                    <img src="images/pizza.svg" alt="" class="product__icon">
                 </div>
-                <div class="dish__products">
-                    <div class="dish__cards">
-                        <img src="images/especial.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Especial</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/roquefort.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Roquefort</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/napolitana2.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Napolitana</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/rucula_y_jamon_crudo.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Rúcula y J. Crudo</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/de_cancha.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">De cancha</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/verdeo_y_panceta.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Verdeo y Panceta</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/trieste.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Trieste</h3>
-                    </div>
-                    <div class="dish__cards">
-                        <img src="images/jamon_y_morrones.jpg" alt="" class="dish__card__img">
-                        <h3 class="dish__card__subtitle">Jamon y Morrones</h3>
+                <div id="pizzas" class="product__meals">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container product">
+            <div class="product__board">
+                <div class="product__icons">
+                    <img src="images/fork.svg" alt="" class="product__icon">
+                </div>
+                <div id="empanadas" class="product__meals">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container product">
+            <div class="product__board">
+                <div class="product__icons">
+                    <img src="images/dessert.svg" alt="" class="product__icon">
+                </div>
+                <div id="postres" class="product__meals">
+                    <div class="product__cards">
+                        <img src="images/bombones.jpg" alt="" class="product__card__img">
+                        <h3 class="product__card__subtitle"></h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="modal">
+
+        <div class="modal oculto">
             <div class="modal__product">
-                <img src="images/napolitana2.jpg" alt="producto" class="product__img">
+                <img id="carga-productos-img" src="images/napolitana2.jpg" alt="producto" class="product__img">
             </div>
             <div class="modal__description">
-                <h4 class="modal__description__subtitle">Napolitana $900</h4>
-                <p class="modal__description__paragraph">Ingredientes: Salsa de tomate, Muzza, Tomate, ajo, olivas verdes (8 porciones)</p>
+                <h4 id="carga-productos-subtitle" class="modal__description__subtitle">Napolitana $900</h4>
+                <p id="carga-productos-descripcion" class="modal__description__paragraph">Ingredientes: Salsa de tomate, Muzza, Tomate, ajo, olivas verdes (8 porciones)</p>
                 <select name="modal__select" class="modal__select">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
@@ -99,11 +92,12 @@
                   </select>
             </div>
             <div class="modal__confirm">
-                <button class="modal__confirm__button" name="modal__confirm__button">Agregar al Carrito
-                    <img src="imagenes/cart.svg" alt="" class="modal__confirm__icon">
+                <button class="modal__confirm__button" name="modal__confirm__button">Agregar al pedido
+                    <img src="images/cart.svg" alt="" class="modal__confirm__icon">
                 </button>
             </div>
         </div>
+
 
     </main>
 
@@ -113,7 +107,8 @@
 
 
 
-    <script src="" type="module"></script>
+    <script src="main.js" type="module"></script>
+
 </body>
 
 </html>

@@ -1,68 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planilla</title>
+    <title>Template</title>
+
     <style type="text/css">
-        body {
-            background-color: darkblue;
-            z-index: -1;
-        }
-        
-        .modal {
-            width: 80vw;
-            height: max-content;
-            background-color: white;
-            margin: 0 auto;
-            justify-content: center;
-            padding: 1em 0;
-        }
-        
-        li {
-            list-style: none;
-        }
-        
-        ul {
-            display: grid;
-            gap: 1em;
-            margin: 2em auto;
-            text-align: center;
-        }
+      body {
+        background-color: darkblue;
+        z-index: -1;
+      }
+
+      form {
+        margin-top: 3rem !important;
+        padding:5rem !important;
+        background-color: aliceblue;
+        border-radius: 1rem !important;
+      }
+
+      h3 {
+        margin-bottom: 2rem;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div class="modal">
-        <form>
-            <ul>
-                <li><input id="nombre_producto" type="text" placeholder="Nombre producto"></li>
-                <li><textarea id="descripcion" cols="30" rows="10" placeholder="Ingredientes"></textarea></li>
-                <li><input id="precio" type="number" placeholder="Precio unitario"></li>
-                <li><label for="categoria">Categoría</label>
-                    <select id="categoria">
-                    <option value="no_asignada" selected>no asignada</option>
-                    <option value="pizzas">pizzas</option>
-                    <option value="empanadas">empanadas</option>
-                    <option value="postres">postres</option>
-                    <option value="bebidas">bebidas</option>
-                    <option value="otras1">otras1</option>
-                    <option value="otras2">otras2</option>
-                    <option value="otras3">otras3</option>
-                    <option value="otras4">otras4</option>
-                    <option value="otras5">otras5</option>
-                  </select></li>
-                <li><label for="archivo_imagen">Imagen del producto</label>
-                    <input id="archivo_imagen" type="file" accept="image/*"></li>
+  <body>
+    <div class="container-fluid mt-4 col-md-6 col-sm-12 col-lg-4">
+      <div class="row">
+        <form
+          action="https://laomingcode-node-mysql.herokuapp.com/add/product/"
+          method="POST"
+          class=""
+        >
+        <h3>Registro de productos</h3>
+          <div class="input-group input-group-sm mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Nombre producto"
+            />
+          </div>
 
-            </ul>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="description"
+              name="description"
+            ></textarea>
+            <label for="description">Descripción</label>
+          </div>
 
+          <div class="input-group input-group-sm mb-3 mt-3">
+            <input
+              id="price"
+              name="price"
+              type="number"
+              placeholder="Precio unitario"
+              class="form-control"
+            />
+          </div>
+
+          <!-- <input type="hidden" name="picture" id="picture" value="" /> -->
+
+          <div class="input-group input-group-sm mb-3">
+            <input type="file" class="form-control" name="file_picture" id="file_picture" onchange="fileChange()" accept="image/*">
+          </div>
+
+          <input type="hidden" name="picture" id="picture"/>
+          <input type="hidden" name="available" id="available" value="1" />
+
+          <label for="category_id" class="mb-1">Categoria</label>
+          <select class="form-select" id="category_id" name="category_id"></select>
+
+          <button type="submit" class="btn btn-success mt-3">Registrar</button>
         </form>
+      </div>
     </div>
-
-
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../public/js/loading_template.js"></script>
+    <script src="../public/js/file_upload.js"></script>
+    <script src="../public/js/jquery-3.6.0.min.js"></script>
+  </body>
 </html>

@@ -61,7 +61,7 @@ li {
     height: 10px;
     display: block;
     border-radius: 5px;
-    background-color: red;
+    background-color: rgb(177, 5, 5);
     font-size: 0.7em;
     text-align: center;
 }

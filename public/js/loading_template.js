@@ -13,3 +13,8 @@ fetch(`${API_URL}/api/category`)
       }
     });
   });
+
+let URL_ = window.location
+let location_ = document.getElementById('url')
+location_.value = URL_
+console.log(location_);

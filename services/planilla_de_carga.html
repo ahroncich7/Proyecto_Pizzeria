@@ -71,14 +71,16 @@
             />
           </div>
 
-          <!-- <input type="hidden" name="picture" id="picture" value="" /> -->
 
           <div class="input-group input-group-sm mb-3">
             <input type="file" class="form-control" name="file_picture" id="file_picture" onchange="fileChange()" accept="image/*">
           </div>
 
           <input type="hidden" name="picture" id="picture"/>
+
           <input type="hidden" name="available" id="available" value="1" />
+
+          <input type="hidden" name="url" id="url" value="" />
 
           <label for="category_id" class="mb-1">Categoria</label>
           <select class="form-select" id="category_id" name="category_id"></select>

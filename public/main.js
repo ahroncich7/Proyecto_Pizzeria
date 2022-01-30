@@ -5,9 +5,9 @@ import {
 } from "./crearTablasProductos.js";
 
 import {
-    otorgarFuncionalidadAClose,
-    otorgarFuncionalidadAImgProductos,
-    otorgarFuncionalidadAlBotonPedido,
+    asignarFuncionOcultarAClose,
+    asignarFuncionMostrarAImgProductos,
+    asignarFuncionMostrarAlBotonPedido,
 
 } from "./visibilidadElementos.js";
 
@@ -27,11 +27,11 @@ async function cargarPagina() {
     let tablaPizzas = await crearTablas("pizzas", urlPizzas);
     let tablaPostres = await crearTablas("postres", urlPostres);
     let tablaEmpanadas = await crearTablas("empanadas", urlEmpanadas);
-    otorgarFuncionalidadAClose()
-    otorgarFuncionalidadAlBotonPedido()
+    asignarFuncionOcultarAClose()
+    asignarFuncionMostrarAlBotonPedido()
     return tablaPizzas,
         tablaPostres,
         tablaEmpanadas,
-        otorgarFuncionalidadAImgProductos()
+        asignarFuncionMostrarAImgProductos()
 }
 cargarPagina()

@@ -1,8 +1,7 @@
 export {
-    otorgarFuncionalidadAClose,
-    otorgarFuncionalidadAlBotonPedido,
-    mostrarModalAgregarAlPedido,
-    otorgarFuncionalidadAImgProductos
+    asignarFuncionOcultarAClose,
+    asignarFuncionMostrarAlBotonPedido,
+    asignarFuncionMostrarAImgProductos
 }
 
 function ocultarModal(e) {
@@ -17,23 +16,23 @@ function mostrarModalPedido() {
     return false
 }
 
-function otorgarFuncionalidadAClose() {
+function mostrarModalAgregarAlPedido() {
+    document.querySelector("#add_to_order_window").classList.remove("oculto");
+}
+
+function asignarFuncionOcultarAClose() {
     document.querySelectorAll(".close").forEach((element) =>
         element.onclick = ocultarModal);
 }
 
 
-function otorgarFuncionalidadAlBotonPedido() {
+function asignarFuncionMostrarAlBotonPedido() {
     document.querySelector("#order_button").onclick = mostrarModalPedido;
 
 }
 
 
-function mostrarModalAgregarAlPedido() {
-    document.querySelector("#add_to_order_window").classList.remove("oculto");
-}
-
-function otorgarFuncionalidadAImgProductos() {
+function asignarFuncionMostrarAImgProductos() {
     document.querySelectorAll(".product__card__img").forEach((element) =>
         element.parentElement.onclick = mostrarModalAgregarAlPedido
     )

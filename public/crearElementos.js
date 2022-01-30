@@ -1,12 +1,7 @@
-import {
-    mostrarModalAgregarAlPedido
-} from "./visibilidadElementos.js";
-
 export function crearModalAgregarAlPedido(product) {
     document.getElementById("carga-productos-img").src = `./images/cat${product.category_id}id${product.id}.jpg`;
     document.getElementById("carga-productos-subtitle").textContent = `${product.name} ${product.price}`;
     document.getElementById("carga-productos-descripcion").textContent = `${product.description}`;
-    mostrarModalAgregarAlPedido();
 };
 
 export function crearTarjetas(products, sectionElement) {

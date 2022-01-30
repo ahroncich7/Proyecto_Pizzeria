@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <header class="hero">
         <div class="container nav">
             <div class="hero__logo">
@@ -22,8 +23,9 @@
                     <a href="#" class="nav__links">Productos</a>
                 </li>
                 <li class="nav__links__menu__container">
-                    <a href="#" class="nav__links">Pedido</a>
+                    <a id="order_button" href="#" class="nav__links">Pedido</a>
                     <span class="nav__links__notif oculto">1</span>
+                    <input id="checker" class="oculto" type="checkbox" checked>
                 </li>
             </ul>
         </div>
@@ -71,7 +73,8 @@
         </section>
 
 
-        <div class="modal oculto">
+        <div id="add_to_order_window" class="modal oculto">
+            <img class="modal__close close" src="images/close.svg">
             <div class="modal__product">
                 <img id="carga-productos-img" src="images/napolitana2.jpg" alt="producto" class="product__img">
             </div>
@@ -93,7 +96,37 @@
             </div>
             <div class="modal__confirm">
                 <button class="modal__confirm__button" name="modal__confirm__button">Agregar al pedido
-                    <img src="images/cart.svg" alt="" class="modal__confirm__icon">
+                    <!-- <img src="images/cart.svg" alt="" class="modal__confirm__icon"> -->
+                </button>
+            </div>
+        </div>
+
+        <div id="order_window" class="modal order oculto">
+            <img class="modal__close close" src="images/close.svg">
+            <span>CONFIRMA TU PEDIDO!!!</span>
+            <div class="order__board">
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <p class="order__product">✔️Lorem, ipsum dolor.</p>
+                <p class="order__product__price">$15</p>
+                <span>Total</span>
+                <span>$200</span>
+            </div>
+            <div class="modal__confirm">
+                <button class="modal__confirm__button" name="modal__confirm__button">Confirmar pedido
+                    <!-- <img src="images/cart.svg" alt="" class="modal__confirm__icon"> -->
                 </button>
             </div>
         </div>

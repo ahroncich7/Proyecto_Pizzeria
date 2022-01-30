@@ -22,19 +22,16 @@ const urlEmpanadas = "https://laomingcode-node-mysql.herokuapp.com/api/product/c
 
 /*Maneja Pagina*/
 
-async function manejarPagina() {
+async function cargarPagina() {
 
-    let pizzas = await crearTablas("pizzas", urlPizzas);
-    let postres = await crearTablas("postres", urlPostres);
-    let empanadas = await crearTablas("empanadas", urlEmpanadas);
-    return pizzas,
-        postres,
-        empanadas,
+    let tablaPizzas = await crearTablas("pizzas", urlPizzas);
+    let tablaPostres = await crearTablas("postres", urlPostres);
+    let tablaEmpanadas = await crearTablas("empanadas", urlEmpanadas);
+    otorgarFuncionalidadAClose()
+    otorgarFuncionalidadAlBotonPedido()
+    return tablaPizzas,
+        tablaPostres,
+        tablaEmpanadas,
         otorgarFuncionalidadAImgProductos()
 }
-
-
-manejarPagina()
-
-otorgarFuncionalidadAClose()
-otorgarFuncionalidadAlBotonPedido()
+cargarPagina()

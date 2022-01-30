@@ -6,7 +6,9 @@ import {
 
 import {
     otorgarFuncionalidadAClose,
-    otorgarFuncionalidadAlBotonPedido
+    otorgarFuncionalidadAImgProductos,
+    otorgarFuncionalidadAlBotonPedido,
+
 } from "./visibilidadElementos.js";
 
 
@@ -19,10 +21,20 @@ const urlEmpanadas = "https://laomingcode-node-mysql.herokuapp.com/api/product/c
 
 
 /*Maneja Pagina*/
-otorgarFuncionalidadAClose();
-otorgarFuncionalidadAlBotonPedido();
-crearTablas("pizzas", urlPizzas);
-crearTablas("postres", urlPostres);
-crearTablas("empanadas", urlEmpanadas);
-otorgarFuncionalidadAClose();
-otorgarFuncionalidadAlBotonPedido();
+
+async function manejarPagina() {
+
+    let pizzas = await crearTablas("pizzas", urlPizzas);
+    let postres = await crearTablas("postres", urlPostres);
+    let empanadas = await crearTablas("empanadas", urlEmpanadas);
+    return pizzas,
+        postres,
+        empanadas,
+        otorgarFuncionalidadAImgProductos()
+}
+
+
+manejarPagina()
+
+otorgarFuncionalidadAClose()
+otorgarFuncionalidadAlBotonPedido()

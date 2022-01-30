@@ -82,7 +82,7 @@ li {
 
 .modal {
     max-width: 90%;
-    width: 1200px;
+    width: max-content;
     position: fixed;
     top: 30vh;
     background-color: rgb(250, 238, 217);
@@ -96,19 +96,25 @@ li {
     transition-duration: 1s;
 }
 
+.modal__product {
+    width: 100%;
+    text-align: center;
+}
+
 .product__img {
-    width: 200px;
+    width: 400px;
     max-width: 100%;
     min-width: 150px;
 }
 
 .modal__description {
     padding-left: 1em;
+    width: 100%;
+    text-align: center;
 }
 
 .modal__select {
     margin: 1em;
-    display: block;
     margin-left: auto;
 }
 

@@ -35,6 +35,6 @@ function mostrarModalAgregarAlPedido() {
 
 function otorgarFuncionalidadAImgProductos() {
     document.querySelectorAll(".product__card__img").forEach((element) =>
-        element.onclick = mostrarModalAgregarAlPedido
+        element.parentElement.onclick = mostrarModalAgregarAlPedido
     )
 }

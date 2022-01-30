@@ -29,6 +29,7 @@ body {
     position: fixed;
     padding-top: 2em;
     display: grid;
+    z-index: 1;
 }
 
 .container {
@@ -94,6 +95,7 @@ li {
     border-radius: 2em;
     transition-property: top;
     transition-duration: 1s;
+    z-index: 2;
 }
 
 .modal__product {
@@ -128,8 +130,6 @@ li {
 }
 
 .order {
-    max-width: 90%;
-    width: 550px;
     max-height: 70vh;
 }
 
@@ -252,6 +252,7 @@ main {
     background-color: #2f4b0e;
     margin: 0 auto;
     text-align: center;
+    cursor: pointer;
 }
 
 .product__card__img {

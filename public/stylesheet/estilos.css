@@ -82,7 +82,7 @@ li {
 
 .modal {
     max-width: 90%;
-    width: max-content;
+    width: 550px;
     position: fixed;
     top: 30vh;
     background-color: rgb(250, 238, 217);

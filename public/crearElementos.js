@@ -6,9 +6,8 @@ export function crearModalAgregarAlPedido(product) {
 
 export function crearTarjetas(products, sectionElement) {
     let elementCard = ""
-    console.log(Object.keys(products).length)
     products.forEach(product => {
-        elementCard += `<div class="product__cards">
+        elementCard += `<div class="product__cards product_cards">
                             <img src=${product.picture}  alt="${product.name}" class="product__card__img">
                             <h3 class="product__card__subtitle">${product.name}</h3>
                         </div>`

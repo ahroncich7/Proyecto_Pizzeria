@@ -25,7 +25,8 @@ async function cargarTablas(IdHTML, catId) {
 
 
 function cargarDatosEnModalAgregarAlPedido(product) {
-    document.getElementById("carga-productos-img").src = `./images/cat${product.category_id}id${product.id}.jpg`;
-    document.getElementById("carga-productos-subtitle").textContent = `${product.name} ${product.price}`;
+    document.getElementById("add_to_order_window").setAttribute("product-id", `${product.id}`)
+    document.getElementById("carga-productos-img").src = `${product.picture}`;
+    document.getElementById("carga-productos-subtitle").textContent = `${product.name} $${product.price}`;
     document.getElementById("carga-productos-descripcion").textContent = `${product.description}`;
 };

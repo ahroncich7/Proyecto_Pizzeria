@@ -6,10 +6,11 @@ import {
 
 import {
     asignarFuncionOcultarAClose,
-    asignarFuncionMostrarAImgProductos,
+    asignarFuncionesAImgProductos,
     asignarFuncionMostrarAlBotonPedido,
+    asignarFuncionesBotonAregarAlPedido
 
-} from "./visibilidadElementos.js";
+} from "./funcionesElementos.js";
 
 
 /*Define Variables y Constantes*/
@@ -31,7 +32,8 @@ async function cargarPagina() {
     return tablaPizzas,
         tablaPostres,
         tablaEmpanadas,
-        asignarFuncionMostrarAImgProductos()
+        asignarFuncionesAImgProductos(),
+        asignarFuncionesBotonAregarAlPedido()
 }
 cargarPagina()
 

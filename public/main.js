@@ -1,8 +1,8 @@
 /*Importa Funciones*/
 
 import {
-    crearTablas
-} from "./crearTablasProductos.js";
+    cargarTablas
+} from "./cargarTablas.js";
 
 import {
     asignarFuncionOcultarAClose,
@@ -14,19 +14,18 @@ import {
 
 /*Define Variables y Constantes*/
 
-const url = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/";
-const urlPizzas = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/1";
-const urlPostres = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/4";
-const urlEmpanadas = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/2";
+const pizzasCatId = 1;
+const empanadasCatId = 2;
+const postresCatId = 4;
 
 
 /*Maneja Pagina*/
 
 async function cargarPagina() {
 
-    let tablaPizzas = await crearTablas("pizzas", urlPizzas);
-    let tablaPostres = await crearTablas("postres", urlPostres);
-    let tablaEmpanadas = await crearTablas("empanadas", urlEmpanadas);
+    let tablaPizzas = await cargarTablas("pizzas", pizzasCatId);
+    let tablaPostres = await cargarTablas("empanadas", empanadasCatId);
+    let tablaEmpanadas = await cargarTablas("postres", postresCatId);
     asignarFuncionOcultarAClose()
     asignarFuncionMostrarAlBotonPedido()
     return tablaPizzas,
@@ -35,3 +34,5 @@ async function cargarPagina() {
         asignarFuncionMostrarAImgProductos()
 }
 cargarPagina()
+
+/*Pruebas*/

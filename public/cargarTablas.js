@@ -2,20 +2,27 @@ import {
     crearTarjetas
 } from "./crearElementos.js";
 
+import {
+    obtenerProductosDeAPI
+} from "./consultasAPI.js";
+
+import {
+    guardarProductosSessionStorage
+} from "./storage.js";
+
 export {
-    crearTablas,
+    cargarTablas,
     cargarDatosEnModalAgregarAlPedido
 }
 
-function crearTablas(id, url) {
-    let tabla = document.getElementById(id)
-    tabla.innerHTML = `<p>Cargando...</p>`;
-    return fetch(url)
-        .then((r) => r.json())
-        .then((data) => crearTarjetas(data.data, tabla))
-        .then((r) => r)
-        .catch((error) => console.log(error))
+async function cargarTablas(IdHTML, catId) {
+
+    let products = await obtenerProductosDeAPI(catId)
+    let tabla = document.getElementById(IdHTML)
+    crearTarjetas(products, tabla)
+    guardarProductosSessionStorage(products)
 }
+
 
 function cargarDatosEnModalAgregarAlPedido(product) {
     document.getElementById("carga-productos-img").src = `./images/cat${product.category_id}id${product.id}.jpg`;

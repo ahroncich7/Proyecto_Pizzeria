@@ -10,7 +10,6 @@ function ocultarModal(e) {
     element.parentElement.classList.add("oculto")
 }
 
-
 function mostrarModalPedido() {
     document.querySelector("#order_window").classList.remove("oculto")
     return false

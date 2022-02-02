@@ -48,23 +48,23 @@ function cargarDatosEnModalPedido(productId, quantity) {
     let category;
     switch (product.category_id) {
         case 1:
-            category = "pizza"
+            category = "Pizza"
             break;
         case 2:
-            category = "empanadas"
+            category = "Empanadas"
             break;
         case 4:
-            category = "porcion"
+            category = "Porcion"
         default:
             break;
     }
-    for (let index = 0; index < quantity; index++) {
-        tablaPedido.innerHTML += `<p class="order__product">✔️${category} ${product.name}.</p>
+
+    tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${category} ${product.name}.</p>
                                 <p class="order__product__price">$${product.price}</p>`
-        totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + product.price)
-        document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
+    totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + (Number(product.price) * quantity))
+    document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
 
 
-    }
+
     orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`)
 }

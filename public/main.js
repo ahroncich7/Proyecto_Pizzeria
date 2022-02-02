@@ -8,7 +8,8 @@ import {
     asignarFuncionOcultarAClose,
     asignarFuncionesAImgProductos,
     asignarFuncionMostrarAlBotonPedido,
-    asignarFuncionesBotonAregarAlPedido
+    asignarFuncionesBotonAregarAlPedido,
+    asignarFuncionesBotonPedido
 
 } from "./funcionesElementos.js";
 
@@ -33,7 +34,8 @@ async function cargarPagina() {
         tablaPostres,
         tablaEmpanadas,
         asignarFuncionesAImgProductos(),
-        asignarFuncionesBotonAregarAlPedido()
+        asignarFuncionesBotonAregarAlPedido(),
+        asignarFuncionesBotonPedido()
 }
 cargarPagina()
 

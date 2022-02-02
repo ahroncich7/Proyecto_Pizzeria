@@ -7,7 +7,8 @@ export {
     asignarFuncionOcultarAClose,
     asignarFuncionMostrarAlBotonPedido,
     asignarFuncionesAImgProductos,
-    asignarFuncionesBotonAregarAlPedido
+    asignarFuncionesBotonAregarAlPedido,
+    asignarFuncionesBotonPedido
 }
 
 function ocultarModal(e) {
@@ -60,4 +61,16 @@ function manejarCargaAPedido() {
     let productId = document.getElementById("add_to_order_window").getAttribute("product-id")
     cargarDatosEnModalPedido(productId, quantity)
     document.querySelector("#add_to_order_window .close").click()
+}
+
+function asignarFuncionesBotonPedido() {
+    document.getElementById("order-confirm-button").onclick = manejarEnviarPedido;
+}
+
+function manejarEnviarPedido() {
+    let orderButton = document.getElementById("order-confirm-button");
+    let order = orderButton.getAttribute("data-order");
+    let sendLink = document.getElementById("send-order")
+    sendLink.href = `https://wa.me/573007154562?text=Hola%20Don%20Remolo,%20quisiera%20hacer%20un%20pedido:${order}`
+    sendLink.click()
 }

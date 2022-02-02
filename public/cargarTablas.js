@@ -45,13 +45,26 @@ function cargarDatosEnModalPedido(productId, quantity) {
     let totalCost = document.getElementById("total-order-cost");
     let product = JSON.parse(sessionStorage.getItem(productId));
     let orderButton = document.getElementById("order-confirm-button");
+    let category;
+    switch (product.category_id) {
+        case 1:
+            category = "pizza"
+            break;
+        case 2:
+            category = "empanadas"
+            break;
+        case 4:
+            category = "porcion"
+        default:
+            break;
+    }
     for (let index = 0; index < quantity; index++) {
-        tablaPedido.innerHTML += `<p class="order__product">✔️${product.name}.</p>
+        tablaPedido.innerHTML += `<p class="order__product">✔️${category} ${product.name}.</p>
                                 <p class="order__product__price">$${product.price}</p>`
         totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + product.price)
         document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
 
 
     }
-    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${product.name}%20\n`)
+    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`)
 }

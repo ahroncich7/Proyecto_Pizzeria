@@ -12,7 +12,8 @@ import {
 
 export {
     cargarTablas,
-    cargarDatosEnModalAgregarAlPedido
+    cargarDatosEnModalAgregarAlPedido,
+    cargarDatosEnModalPedido
 }
 
 async function cargarTablas(IdHTML, catId) {
@@ -30,3 +31,17 @@ function cargarDatosEnModalAgregarAlPedido(product) {
     document.getElementById("carga-productos-subtitle").textContent = `${product.name} $${product.price}`;
     document.getElementById("carga-productos-descripcion").textContent = `${product.description}`;
 };
+
+function cargarDatosEnModalPedido(productId, quantity) {
+    let tablaPedido = document.getElementById("order-board");
+    let totalCost = document.getElementById("total-order-cost")
+    let product = JSON.parse(sessionStorage.getItem(productId))
+    for (let index = 0; index < quantity; index++) {
+        tablaPedido.innerHTML += `<p class="order__product">✔️${product.name}.</p>
+                                <p class="order__product__price">$${product.price}</p>`
+        totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + product.price)
+        document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
+
+    }
+
+}

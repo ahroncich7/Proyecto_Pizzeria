@@ -1,4 +1,7 @@
-import { cargarDatosEnModalAgregarAlPedido } from "./cargarTablas.js"
+import {
+    cargarDatosEnModalAgregarAlPedido,
+    cargarDatosEnModalPedido
+} from "./cargarTablas.js"
 
 export {
     asignarFuncionOcultarAClose,
@@ -55,5 +58,6 @@ function manejarCargaAPedido() {
     let select = document.querySelector("#add_to_order_window select");
     let quantity = select.value
     let productId = document.getElementById("add_to_order_window").getAttribute("product-id")
+    cargarDatosEnModalPedido(productId, quantity)
     document.querySelector("#add_to_order_window .close").click()
 }

@@ -1,8 +1,4 @@
 import {
-    crearTarjetas
-} from "./crearElementos.js";
-
-import {
     obtenerProductosDeAPI
 } from "./consultasAPI.js";
 
@@ -15,6 +11,18 @@ export {
     cargarDatosEnModalAgregarAlPedido,
     cargarDatosEnModalPedido
 }
+
+function crearTarjetas(products, sectionElement) {
+    let elementCard = ""
+    products.forEach(product => {
+        elementCard += `<div class="product__cards product_cards" data-id="${product.id}">
+                            <img src=${product.picture}  alt="${product.name}" class="product__card__img">
+                            <h3 class="product__card__subtitle">${product.name}</h3>
+                        </div>`
+    });
+
+    sectionElement.innerHTML = elementCard;
+};
 
 async function cargarTablas(IdHTML, catId) {
 
@@ -34,14 +42,16 @@ function cargarDatosEnModalAgregarAlPedido(product) {
 
 function cargarDatosEnModalPedido(productId, quantity) {
     let tablaPedido = document.getElementById("order-board");
-    let totalCost = document.getElementById("total-order-cost")
-    let product = JSON.parse(sessionStorage.getItem(productId))
+    let totalCost = document.getElementById("total-order-cost");
+    let product = JSON.parse(sessionStorage.getItem(productId));
+    let orderButton = document.getElementById("order-confirm-button");
     for (let index = 0; index < quantity; index++) {
         tablaPedido.innerHTML += `<p class="order__product">✔️${product.name}.</p>
                                 <p class="order__product__price">$${product.price}</p>`
         totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + product.price)
         document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
 
-    }
 
+    }
+    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")} ${quantity} x ${product.name} \n`)
 }

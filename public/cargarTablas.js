@@ -53,5 +53,5 @@ function cargarDatosEnModalPedido(productId, quantity) {
 
 
     }
-    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")} ${quantity} x ${product.name} \n`)
+    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${product.name}%20\n`)
 }

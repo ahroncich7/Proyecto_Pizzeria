@@ -4,11 +4,15 @@ import {
 } from "./cargarTablas.js"
 
 export {
-    asignarFuncionOcultarAClose,
-    asignarFuncionMostrarAlBotonPedido,
     asignarFuncionesAImgProductos,
-    asignarFuncionesBotonAregarAlPedido,
-    asignarFuncionesBotonPedido
+    manejarFuncionesBotones
+}
+
+function manejarFuncionesBotones() {
+    asignarFuncionOcultarAClose()
+    asignarFuncionMostrarAlBotonPedido()
+    asignarFuncionesBotonAregarAlPedido()
+    asignarFuncionesBotonPedido()
 }
 
 function ocultarModal(e) {

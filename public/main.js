@@ -5,11 +5,9 @@ import {
 } from "./cargarTablas.js";
 
 import {
-    asignarFuncionOcultarAClose,
     asignarFuncionesAImgProductos,
-    asignarFuncionMostrarAlBotonPedido,
-    asignarFuncionesBotonAregarAlPedido,
-    asignarFuncionesBotonPedido
+    manejarFuncionesBotones
+
 
 } from "./funcionesElementos.js";
 
@@ -31,14 +29,13 @@ async function cargarPagina() {
     let tablaPizzas = await cargarTablas("pizzas", pizzasCatId);
     let tablaPostres = await cargarTablas("empanadas", empanadasCatId);
     let tablaEmpanadas = await cargarTablas("postres", postresCatId);
-    asignarFuncionOcultarAClose()
-    asignarFuncionMostrarAlBotonPedido()
+
+
     return tablaPizzas,
         tablaPostres,
         tablaEmpanadas,
         asignarFuncionesAImgProductos(),
-        asignarFuncionesBotonAregarAlPedido(),
-        asignarFuncionesBotonPedido(),
+        manejarFuncionesBotones(),
         observe()
 }
 cargarPagina()

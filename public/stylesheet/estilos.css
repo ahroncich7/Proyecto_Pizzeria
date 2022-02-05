@@ -190,7 +190,8 @@ li {
 
 /* Main */
 
-main {
+main,
+.modals {
     display: grid;
 }
 
@@ -295,3 +296,13 @@ main {
 
 /*Pruebas*/
 
+.blureable>*:not(.modals) {
+    background-color: rgba(0, 0, 0, 0.212);
+    filter: blur(3px);
+    pointer-events: none;
+    scroll-behavior: none;
+}
+
+.blureable {
+    overflow: hidden;
+}

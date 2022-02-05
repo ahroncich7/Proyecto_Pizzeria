@@ -35,12 +35,14 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+    border-radius: 20px;
 }
 
 .nav {
     display: flex;
     overflow-x: hidden;
     height: max-content;
+    border-radius: 0;
 }
 
 li {
@@ -49,7 +51,6 @@ li {
 
 .nav__links__menu {
     display: grid;
-    /* grid-auto-flow: column; */
     gap: 2em;
     margin-left: auto;
 }
@@ -60,13 +61,14 @@ li {
 }
 
 .nav__links__notif {
-    width: 10px;
-    height: 10px;
-    display: block;
-    border-radius: 5px;
-    background-color: rgb(177, 5, 5);
-    font-size: 0.7em;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    line-height: 15px;
     text-align: center;
+    background: rgb(235, 6, 6);
 }
 
 .nav__links {
@@ -88,8 +90,6 @@ li {
     top: 30vh;
     background-color: rgb(250, 238, 217);
     justify-self: center;
-    display: flex;
-    flex-wrap: wrap;
     padding: 1em;
     justify-content: center;
     border-radius: 2em;
@@ -101,12 +101,14 @@ li {
 .modal__product {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .product__img {
-    min-width: 150px;
-    max-height: 250px;
-    max-width: 100%;
+    margin: 0 auto;
+    max-height: 25vh;
+    max-width: 58%;
 }
 
 .modal__description {
@@ -122,15 +124,13 @@ li {
 
 .modal__confirm {
     display: block;
-    align-self: center;
-}
-
-.modal__confirm__button {
-    border-radius: 3px;
+    margin: 0 auto;
 }
 
 .order {
     max-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .order span {
@@ -157,15 +157,10 @@ li {
     display: inline-block;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    background-color: transparent;
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -253,11 +248,20 @@ main {
     margin: 0 auto;
     text-align: center;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.product__cards:hover {
+    box-shadow: black;
+    transform: scale(1.05);
+    transition-duration: 1s;
 }
 
 .product__card__img {
     width: 500px;
     max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .product__card__subtitle {
@@ -281,3 +285,13 @@ main {
         font-size: 12px;
     }
 }
+
+@media (max-height: 420px) {
+    .nav__links__menu {
+        grid-auto-flow: column;
+    }
+}
+
+
+/*Pruebas*/
+

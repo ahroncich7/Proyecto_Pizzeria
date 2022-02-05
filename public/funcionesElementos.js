@@ -60,6 +60,9 @@ function manejarCargaAPedido() {
     let quantity = select.value
     let productId = document.getElementById("add_to_order_window").getAttribute("product-id")
     cargarDatosEnModalPedido(productId, quantity)
+    let badge = document.getElementById("badge")
+    badge.setAttribute("data-value", Number(badge.getAttribute("data-value")) + 1)
+    badge.innerHTML = badge.getAttribute("data-value")
     document.querySelector("#add_to_order_window .close").click()
 }
 

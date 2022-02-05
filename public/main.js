@@ -13,6 +13,10 @@ import {
 
 } from "./funcionesElementos.js";
 
+import {
+    observe
+} from "./observer.js";
+
 
 /*Define Variables y Constantes*/
 
@@ -24,7 +28,6 @@ const postresCatId = 4;
 /*Maneja Pagina*/
 
 async function cargarPagina() {
-
     let tablaPizzas = await cargarTablas("pizzas", pizzasCatId);
     let tablaPostres = await cargarTablas("empanadas", empanadasCatId);
     let tablaEmpanadas = await cargarTablas("postres", postresCatId);
@@ -35,8 +38,11 @@ async function cargarPagina() {
         tablaEmpanadas,
         asignarFuncionesAImgProductos(),
         asignarFuncionesBotonAregarAlPedido(),
-        asignarFuncionesBotonPedido()
+        asignarFuncionesBotonPedido(),
+        observe()
 }
 cargarPagina()
+
+
 
 /*Pruebas*/

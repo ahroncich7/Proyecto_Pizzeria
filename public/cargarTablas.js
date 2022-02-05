@@ -42,7 +42,7 @@ function cargarDatosEnModalAgregarAlPedido(product) {
 
 function cargarDatosEnModalPedido(productId, quantity) {
     let tablaPedido = document.getElementById("order-board");
-    let totalCost = document.getElementById("total-order-cost");
+
     let product = JSON.parse(sessionStorage.getItem(productId));
     let orderButton = document.getElementById("order-confirm-button");
     let category;
@@ -60,11 +60,13 @@ function cargarDatosEnModalPedido(productId, quantity) {
     }
 
     tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${category} ${product.name}.</p>
-                                <p class="order__product__price">$${product.price}</p>`
-    totalCost.setAttribute("data-total", Number(totalCost.getAttribute("data-total")) + (Number(product.price) * quantity))
-    document.getElementById("total-order-cost").innerHTML = "$ " + totalCost.getAttribute("data-total")
+                             <p class="order__product__price">$${product.price}</p>`
 
+    let totalCost = document.getElementById("total-order-cost");
+    let actualCost = Number(totalCost.getAttribute("data-total"))
+    totalCost.setAttribute("data-total", actualCost + (Number(product.price) * quantity))
+    totalCost.innerHTML = "$ " + totalCost.getAttribute("data-total")
 
-
-    orderButton.setAttribute("data-order", `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`)
+    let orderText = `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`
+    orderButton.setAttribute("data-order", orderText)
 }

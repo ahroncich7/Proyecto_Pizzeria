@@ -1,6 +1,7 @@
 const API_URL = `https://laomingcode-node-mysql.herokuapp.com`;
 const HTMLResponse = document.getElementById("category_id");
 
+//Carga en un select la lista de categorias.
 fetch(`${API_URL}/api/category`)
   .then((response) => response.json())
   .then((data) => {
@@ -14,7 +15,9 @@ fetch(`${API_URL}/api/category`)
     });
   });
 
+
+//Obtiene el url de la pagina actual
 let URL_ = window.location
 let location_ = document.getElementById('url')
 location_.value = URL_
-console.log(location_);
+// console.log(location_);

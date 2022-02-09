@@ -1,31 +1,42 @@
-export function observe(ejecutar) {
-    setTimeout(() => {
-        manejarBadge()
-        manejarBlur()
-        observe()
-    }, 1)
+export function observe() {
+    observerBlur.observe(modal1, configBlur);
+    observerBlur.observe(modal2, configBlur);
+    observerBadge.observe(badge, configBadge);
 }
 
-function manejarBadge() {
-    let badge = document.getElementById("badge");
-    if (badge.innerHTML != "") {
-        badge.classList.remove("oculto")
+function manejarBadge(elements) {
+    let badge_element = elements[0].target
+    console.log(elements)
+    if (badge_element.innerHTML != "") {
+        if (badge_element.classList.contains("oculto")) {
+            badge_element.classList.remove("oculto")
+        }
     } else {
-        badge.classList.add("oculto")
+        if (badge_element.innerHTML == "") {
+            badge_element.classList.add("oculto")
+        }
     }
 }
 
-function manejarBlur() {
-    let blureable = document.getElementById("blureable");
-    let modal1 = document.getElementById("add_to_order_window");
-    let modal2 = document.getElementById("order_window");
-
-    if (!modal1.classList.contains("oculto") || !modal2.classList.contains("oculto")) {
+function manejarBlur(elements) {
+    let blureable = document.getElementById("blureable")
+    if (!(elements[0].target.classList.contains("oculto"))) {
         blureable.classList.add("blureable")
     } else {
-        if (blureable.classList.contains("blureable")) {
-            blureable.classList.remove("blureable")
-        }
-
+        blureable.classList.remove("blureable")
     }
-};
+}
+
+let configBlur = {
+    attributes: true
+}
+
+let configBadge = {
+    childList: true
+}
+
+let observerBlur = new MutationObserver(manejarBlur);
+let observerBadge = new MutationObserver(manejarBadge);
+let modal1 = document.getElementById("add_to_order_window");
+let modal2 = document.getElementById("order_window");
+let badge = document.getElementById("badge");

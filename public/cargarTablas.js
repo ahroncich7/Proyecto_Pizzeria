@@ -25,7 +25,6 @@ function crearTarjetas(products, sectionElement) {
 };
 
 async function cargarTablas(IdHTML, catId) {
-
     let products = await obtenerProductosDeAPI(catId)
     let tabla = document.getElementById(IdHTML)
     crearTarjetas(products, tabla)
@@ -34,7 +33,7 @@ async function cargarTablas(IdHTML, catId) {
 
 
 function cargarDatosEnModalAgregarAlPedido(product) {
-    document.getElementById("add_to_order_window").setAttribute("product-id", `${product.id}`)
+    document.getElementById("add-to-order-window").setAttribute("product-id", `${product.id}`)
     document.getElementById("carga-productos-img").src = `${product.picture}`;
     document.getElementById("carga-productos-subtitle").textContent = `${product.name} $${product.price}`;
     document.getElementById("carga-productos-descripcion").textContent = `${product.description}`;

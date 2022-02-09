@@ -44,19 +44,7 @@ function cargarDatosEnModalPedido(productId, quantity) {
 
     let product = JSON.parse(sessionStorage.getItem(productId));
     let orderButton = document.getElementById("order-confirm-button");
-    let category;
-    switch (product.category_id) {
-        case 1:
-            category = "Pizza"
-            break;
-        case 2:
-            category = "Empanadas"
-            break;
-        case 4:
-            category = "Porcion"
-        default:
-            break;
-    }
+    let category = setCategory(product)
 
     tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${category} ${product.name}.
                                 <img class="close" src="images/close_mini.svg"></p>
@@ -68,6 +56,21 @@ function cargarDatosEnModalPedido(productId, quantity) {
     totalCost.setAttribute("data-total", actualCost + (Number(product.price) * quantity))
     totalCost.innerHTML = "$ " + totalCost.getAttribute("data-total")
 
-    let orderText = `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`
-    orderButton.setAttribute("data-order", orderText)
+    let whatsappOrderText = `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${category}%20${product.name},`
+    orderButton.setAttribute("data-order", whatsappOrderText)
+}
+
+function setCategory(product) {
+    switch (product.category_id) {
+        case 1:
+            return "Pizza"
+            break;
+        case 2:
+            return "Empanadas"
+            break;
+        case 4:
+            return "Porcion"
+        default:
+            break;
+    }
 }

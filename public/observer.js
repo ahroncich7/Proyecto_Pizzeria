@@ -6,7 +6,6 @@ export function observe() {
 
 function manejarBadge(elements) {
     let badge_element = elements[0].target
-    console.log(elements)
     if (badge_element.innerHTML != "") {
         if (badge_element.classList.contains("oculto")) {
             badge_element.classList.remove("oculto")

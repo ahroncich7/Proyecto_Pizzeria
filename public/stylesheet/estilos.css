@@ -13,7 +13,6 @@ body {
 }
 
 .oculto {
-    /* display: none !important; */
     visibility: hidden !important;
     top: -30px !important;
 }
@@ -140,10 +139,15 @@ li {
     width: max-content;
 }
 
+.order__product__price_sum {
+    font-weight: 800;
+    text-align: right;
+}
+
 .order__board {
     width: 100%;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 60% 20% 20%;
     row-gap: 1em;
     max-height: 40vh;
     overflow-y: scroll;

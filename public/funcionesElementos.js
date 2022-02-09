@@ -22,12 +22,12 @@ function ocultarModal(e) {
 }
 
 function mostrarModalPedido() {
-    document.querySelector("#order_window").classList.remove("oculto")
+    document.querySelector("#order-window").classList.remove("oculto")
     return false
 }
 
 function mostrarModalAgregarAlPedido() {
-    document.querySelector("#add_to_order_window").classList.remove("oculto");
+    document.querySelector("#add-to-order-window").classList.remove("oculto");
 }
 
 function asignarFuncionOcultarAClose() {
@@ -37,7 +37,7 @@ function asignarFuncionOcultarAClose() {
 
 
 function asignarFuncionMostrarAlBotonPedido() {
-    document.querySelector("#order_button").onclick = mostrarModalPedido;
+    document.querySelector("#order-button").onclick = mostrarModalPedido;
 
 }
 
@@ -60,14 +60,14 @@ function asignarFuncionesBotonAregarAlPedido() {
 }
 
 function manejarCargaAPedido() {
-    let select = document.querySelector("#add_to_order_window select");
+    let select = document.querySelector("#add-to-order-window select");
     let quantity = select.value
-    let productId = document.getElementById("add_to_order_window").getAttribute("product-id")
+    let productId = document.getElementById("add-to-order-window").getAttribute("product-id")
     cargarDatosEnModalPedido(productId, quantity)
     let badge = document.getElementById("badge")
     badge.setAttribute("data-value", Number(badge.getAttribute("data-value")) + 1)
     badge.innerHTML = badge.getAttribute("data-value")
-    document.querySelector("#add_to_order_window .close").click()
+    document.querySelector("#add-to-order-window .close").click()
 }
 
 function asignarFuncionesBotonPedido() {

@@ -37,6 +37,6 @@ let configBadge = {
 
 let observerBlur = new MutationObserver(manejarBlur);
 let observerBadge = new MutationObserver(manejarBadge);
-let modal1 = document.getElementById("add_to_order_window");
-let modal2 = document.getElementById("order_window");
+let modal1 = document.getElementById("add-to-order-window");
+let modal2 = document.getElementById("order-window");
 let badge = document.getElementById("badge");

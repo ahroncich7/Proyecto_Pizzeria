@@ -59,8 +59,10 @@ function cargarDatosEnModalPedido(productId, quantity) {
             break;
     }
 
-    tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${category} ${product.name}.</p>
-                             <p class="order__product__price">$${product.price}</p>`
+    tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${category} ${product.name}.
+                                <img class="close" src="images/close_mini.svg"></p>
+                             <p class="order__product__price">$${product.price}</p>
+                             <p class="order__product__price_sum ">$${product.price*quantity} </p>`
 
     let totalCost = document.getElementById("total-order-cost");
     let actualCost = Number(totalCost.getAttribute("data-total"))

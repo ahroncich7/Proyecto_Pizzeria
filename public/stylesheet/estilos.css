@@ -284,6 +284,7 @@ main,
     height: 25vh;
     background-color: #352312;
     text-align: center;
+    color: #00000096;
 }
 
 .footer__main {
@@ -307,6 +308,17 @@ main,
     line-height: 1.7;
     display: flex;
     justify-content: center;
+}
+
+.footer__dev img {
+    width: 24px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.footer__dev img:hover {
+    transform: scale(1.5);
+    transition-duration: 0.75s;
 }
 
 

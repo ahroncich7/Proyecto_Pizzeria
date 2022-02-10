@@ -10,8 +10,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-    <title>Template</title>
+    <title>Update product</title>
 
     <style type="text/css">
       body {
@@ -20,31 +21,44 @@
       }
 
       form {
-        margin-top: 3rem !important;
-        padding:5rem !important;
+        padding:3rem !important;
         background-color: aliceblue;
         border-radius: 1rem !important;
       }
 
       h3 {
         margin-bottom: 2rem;
+            color: white; 
+            text-shadow: black (0, 0, 0) 0.1em 0.1em 0.2em      
+        
       }
 
       input, select,textarea{
         border-radius: 1rem !important;
-      }      
+      }
+
+      .img_picture{
+          padding: 1rem;
+          width: 100%;
+          height: 50%;
+          border-radius: 2rem;
+      }
+      
     </style>
   </head>
 
   <body>
-    <div class="container mt-4 col-md-6 col-sm-12 col-lg-4">
-      <div class="row">
+
+    <div class="container-fluid mt-4 col-md-6 col-sm-12 col-lg-4">
+        <h3>Update product</h3>
+        <div class="row">
         <form
-          action="https://laomingcode-node-mysql.herokuapp.com/add/product/"
+          id="update_form"
+          action=""
           method="POST"
-          class=""
+          credentials="include"
+          
         >
-        <h3>Registro de productos</h3>
           <div class="input-group input-group-sm mb-3">
             <input
               type="text"
@@ -75,6 +89,7 @@
             />
           </div>
 
+          <img id="img_picture" alt="image not available" class="img_picture">
           <div class="input-group input-group-sm mb-3">
             <input type="file" class="form-control" name="file_picture" id="file_picture" onchange="fileChange()" accept="image/*">
           </div>
@@ -83,12 +98,12 @@
 
           <input type="hidden" name="available" id="available" value="1" />
 
-          <input type="hidden" name="url" id="url" value="" />
+          <input type="hidden" name="url" id="url"/>
 
           <label for="category_id" class="mb-1">Categoria</label>
           <select class="form-select" id="category_id" name="category_id"></select>
 
-          <button type="submit" class="btn btn-success mt-3">Registrar</button>
+          <button type="submit" class="btn btn-success mt-3"><i class="fas fa-sync-alt"></i> Update</button>
         </form>
       </div>
     </div>
@@ -100,5 +115,7 @@
     <script src="../public/js/loading_template.js"></script>
     <script src="../public/js/file_upload.js"></script>
     <script src="../public/js/jquery-3.6.0.min.js"></script>
+    <script src="../public/js/edit_products.js"></script>
+
   </body>
 </html>

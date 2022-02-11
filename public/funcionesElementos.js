@@ -60,8 +60,7 @@ function asignarFuncionesBotonAregarAlPedido() {
 }
 
 function manejarCargaAPedido() {
-    let select = document.querySelector("#add-to-order-window select");
-    let quantity = select.value
+    let quantity = document.getElementById("modal-quantity").value
     let productId = document.getElementById("add-to-order-window").getAttribute("product-id")
     cargarDatosEnModalPedido(productId, quantity)
     let badge = document.getElementById("badge")

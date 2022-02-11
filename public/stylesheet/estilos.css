@@ -113,6 +113,12 @@ li {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.modal__quantity {
+    width: 50px;
+    text-align: center;
 }
 
 .product__img {
@@ -127,11 +133,6 @@ li {
     text-align: center;
 }
 
-.modal__select {
-    margin: 1em;
-    margin-left: auto;
-}
-
 .modal__confirm {
     display: block;
     margin: 0 auto;
@@ -141,6 +142,10 @@ li {
     max-height: 70vh;
     display: flex;
     flex-wrap: wrap;
+}
+
+.order__product {
+    justify-self: left;
 }
 
 .order span {
@@ -158,10 +163,11 @@ li {
 .order__board {
     width: 100%;
     display: grid;
-    grid-template-columns: 60% 20% 20%;
-    row-gap: 1em;
+    grid-template-columns: max-content 1fr 1fr 1fr;
+    margin: 1em auto;
     max-height: 40vh;
     overflow-y: scroll;
+    justify-items: center;
 }
 
 .order__product__price {

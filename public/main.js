@@ -12,7 +12,7 @@ import {
 } from "./funcionesElementos.js";
 
 import {
-    observe
+    observarCambios
 } from "./observer.js";
 
 
@@ -36,7 +36,7 @@ async function cargarPagina() {
         tablaEmpanadas,
         asignarFuncionesAImgProductos(),
         manejarFuncionesBotones(),
-        observe()
+        observarCambios()
 }
 cargarPagina()
 

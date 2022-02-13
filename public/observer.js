@@ -1,4 +1,4 @@
-export function observe() {
+export function observarCambios() {
     observerBlur.observe(modal1, configBlur);
     observerBlur.observe(modal2, configBlur);
     observerBadge.observe(badge, configBadge);

@@ -37,24 +37,20 @@ function cargarDatosEnModalAgregarAlPedido(product) {
     document.getElementById("carga-productos-img").src = `${product.picture}`;
     document.getElementById("carga-productos-subtitle").textContent = `${product.name} $${product.price}`;
     document.getElementById("carga-productos-descripcion").textContent = `${product.description}`;
+    document.getElementById("modal-quantity").value = 1
 };
 
 function cargarDatosEnModalPedido(productId, quantity) {
     let tablaPedido = document.getElementById("order-board");
 
     let product = JSON.parse(sessionStorage.getItem(productId));
-    let orderButton = document.getElementById("order-confirm-button");
 
-    tablaPedido.innerHTML += `<p class="order__product">✔️${quantity} x ${product.category_id} ${product.name}.</p>
+    tablaPedido.innerHTML += `<div class="board__item" data-> 
+                                <input data-id= "${productId}"  
+                                type="number" min="0" max="100" class="modal__quantity" value="${quantity}">
+                                <p class="order__product">&nbspx ${product.category_id} ${product.name}.</p>
                                 <img class="close" src="images/close_mini.svg">
-                             <p class="order__product__price">$${product.price}</p>
-                             <p class="order__product__price_sum ">$${product.price*quantity} </p>`
-
-    let totalCost = document.getElementById("total-order-cost");
-    let actualCost = Number(totalCost.getAttribute("data-total"))
-    totalCost.setAttribute("data-total", actualCost + (Number(product.price) * quantity))
-    totalCost.innerHTML = "$ " + totalCost.getAttribute("data-total")
-
-    let whatsappOrderText = `${orderButton.getAttribute("data-order")}%20${quantity}%20x%20${product.category_id}%20${product.name},`
-    orderButton.setAttribute("data-order", whatsappOrderText)
+                                <p class="order__product__price">$</p>
+                                <p class="order__product__price_sum">$</p>
+                            </div>`;
 }

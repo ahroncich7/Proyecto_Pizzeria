@@ -11,7 +11,7 @@
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    background-color: #E2B575;
+    background-color: #efd1a6;
     overflow-x: hidden;
 }
 
@@ -162,12 +162,19 @@ li {
 
 .order__board {
     width: 100%;
-    display: grid;
-    grid-template-columns: max-content 1fr 1fr 1fr;
+    height: 30vh;
+    overflow: hidden;
     margin: 1em auto;
-    max-height: 40vh;
     overflow-y: scroll;
     justify-items: center;
+}
+
+.board__item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content 1fr 30px 50px 50px;
+    justify-items: center;
+    margin: 0.2em;
 }
 
 .order__product__price {
@@ -297,7 +304,7 @@ main,
     display: flex;
     flex-direction: column;
     margin-top: 2em;
-    background-color: #352312;
+    background-color: #443629;
     text-align: center;
     color: #00000096;
 }

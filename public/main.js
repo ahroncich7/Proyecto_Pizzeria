@@ -1,11 +1,45 @@
-import { crearTablas } from "./crearTablasProductos.js";
+/*Importa Funciones*/
 
-let url = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/";
-let urlPizzas = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/1"
-let urlPostres = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/4"
-let urlEmpanadas = "https://laomingcode-node-mysql.herokuapp.com/api/product/category/2"
+import {
+    cargarTablas
+} from "./cargarTablas.js";
+
+import {
+    asignarFuncionesAImgProductos,
+    manejarFuncionesBotones
 
 
-crearTablas("pizzas", urlPizzas)
-crearTablas("postres", urlPostres)
-crearTablas("empanadas", urlEmpanadas)
+} from "./funcionesElementos.js";
+
+import {
+    observarCambios
+} from "./observer.js";
+
+
+/*Define Variables y Constantes*/
+
+const pizzasCatId = 1;
+const empanadasCatId = 2;
+const postresCatId = 4;
+
+
+/*Maneja Pagina*/
+
+async function cargarPagina() {
+    let tablaPizzas = await cargarTablas("pizzas", pizzasCatId);
+    let tablaPostres = await cargarTablas("empanadas", empanadasCatId);
+    let tablaEmpanadas = await cargarTablas("postres", postresCatId);
+
+
+    return tablaPizzas,
+        tablaPostres,
+        tablaEmpanadas,
+        asignarFuncionesAImgProductos(),
+        manejarFuncionesBotones(),
+        observarCambios()
+}
+cargarPagina()
+
+
+
+/*Pruebas*/

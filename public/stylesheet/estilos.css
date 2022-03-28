@@ -6,15 +6,26 @@
 
 /* font-family: 'Dancing Script', cursive; */
 
+
+/*General*/
+
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    background-color: #E2B575;
+    background-color: #efd1a6;
     overflow-x: hidden;
 }
 
 .oculto {
-    display: none !important;
+    visibility: hidden !important;
+    top: -30px !important;
 }
+
+a {
+    text-decoration: none;
+}
+
+
+/*Hero*/
 
 .hero {
     background-image: linear-gradient(180deg, #0000007e 0%, #13111181 100%), url(../images/background-hero.jpg);
@@ -23,21 +34,24 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100%;
-    height: 25vh;
-    position: relative;
+    position: fixed;
     padding-top: 2em;
+    padding-bottom: 1em;
     display: grid;
+    z-index: 1;
 }
 
 .container {
     width: 90%;
     margin: 0 auto;
+    border-radius: 20px;
 }
 
 .nav {
     display: flex;
     overflow-x: hidden;
     height: max-content;
+    border-radius: 0;
 }
 
 li {
@@ -57,13 +71,14 @@ li {
 }
 
 .nav__links__notif {
-    width: 10px;
-    height: 10px;
-    display: block;
-    border-radius: 5px;
-    background-color: rgb(177, 5, 5);
-    font-size: 0.7em;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #fff;
+    line-height: 15px;
     text-align: center;
+    background: rgb(235, 6, 6);
 }
 
 .nav__links {
@@ -80,53 +95,138 @@ li {
 
 .modal {
     max-width: 90%;
-    width: 1200px;
+    width: 550px;
     position: fixed;
     top: 30vh;
     background-color: rgb(250, 238, 217);
     justify-self: center;
-    display: flex;
-    flex-wrap: wrap;
     padding: 1em;
     justify-content: center;
     border-radius: 2em;
+    transition-property: top;
+    transition-duration: 1s;
+    z-index: 2;
+}
+
+.modal__product {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.modal__quantity {
+    width: 50px;
+    text-align: center;
 }
 
 .product__img {
-    width: 200px;
-    max-width: 100%;
-    min-width: 150px;
+    margin: 0 auto;
+    max-height: 25vh;
+    max-width: 58%;
 }
 
 .modal__description {
     padding-left: 1em;
-}
-
-.modal__select {
-    margin: 1em;
-    display: block;
-    margin-left: auto;
+    width: 100%;
+    text-align: center;
 }
 
 .modal__confirm {
     display: block;
-    align-self: center;
+    margin: 0 auto;
+}
+
+.order {
+    max-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.order__product {
+    justify-self: left;
+}
+
+.order span {
+    padding-bottom: 2em;
+    font-weight: 800;
+    text-align: center;
+    width: max-content;
+}
+
+.order__product__price_sum {
+    font-weight: 800;
+    text-align: right;
+}
+
+.order__board {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    margin: 1em auto;
+    overflow-y: scroll;
+    justify-items: center;
+}
+
+.board__item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content 1fr 30px 50px 50px;
+    justify-items: center;
+    margin: 0.2em;
+}
+
+.order__product__price {
+    text-align: right;
 }
 
 .modal__confirm__button {
-    border-radius: 3px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #2F4B0E;
+    border-color: #2F4B0E
+}
+
+.modal__confirm__button:active {
+    background-color: #435a2a;
+    border-color: #435a2a;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
 }
 
 
 /* Main */
 
-main {
+main,
+.modals {
     display: grid;
 }
 
 .phrase {
     text-align: center;
     padding-top: 1em;
+    margin-top: 25vh;
 }
 
 .phrase>p {
@@ -144,7 +244,7 @@ main {
 }
 
 
-/*dish*/
+/*meals*/
 
 .product {
     margin-top: 2em;
@@ -176,11 +276,21 @@ main {
     background-color: #2f4b0e;
     margin: 0 auto;
     text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.product__cards:hover {
+    box-shadow: black;
+    transform: scale(1.05);
+    transition-duration: 1s;
 }
 
 .product__card__img {
     width: 500px;
     max-width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .product__card__subtitle {
@@ -188,16 +298,113 @@ main {
 }
 
 
+/*footer*/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    background-color: #443629;
+    text-align: center;
+    color: #00000096;
+}
+
+.footer__main {
+    margin-bottom: 1em;
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.footer__title {
+    font-weight: 700;
+    font-family: 'Dancing Script', sans-serif;
+    flex-grow: 0.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__title * {
+    border-radius: 3px;
+    box-shadow: 0 0 5px 4px #00000096;
+    margin: 1em;
+    padding: 0.25em;
+}
+
+.footer__dev {
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1em;
+}
+
+.footer__dev img {
+    width: 24px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.footer__dev img:hover {
+    transform: scale(1.5);
+    transition-duration: 0.75s;
+}
+
+.footer__dev__social {
+    align-self: center;
+}
+
+
 /*Media queries*/
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .nav__links__menu {
-        display: flex;
-        flex-direction: column;
+        grid-auto-flow: row;
         text-align: end;
         padding-left: 0;
     }
     .hero__title {
         font-size: 1em;
     }
+    .order {
+        font-size: 12px;
+    }
+    .footer__dev {
+        font-size: 12px;
+    }
+    .footer__dev img {
+        width: 24px;
+    }
+}
+
+@media (max-height: 480px) {
+    .footer__dev {
+        font-size: 12px;
+        line-height: 1;
+    }
+    .footer__dev img {
+        width: 24px;
+    }
+}
+
+@media (max-height: 420px) {
+    .nav__links__menu {
+        grid-auto-flow: column;
+    }
+}
+
+
+/*Pruebas*/
+
+.blureable>*:not(.modals) {
+    background-color: rgba(0, 0, 0, 0.212);
+    filter: blur(3px);
+    pointer-events: none;
+    scroll-behavior: none;
+}
+
+.blureable {
+    overflow: hidden;
 }

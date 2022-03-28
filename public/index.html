@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria Don Antonio</title>
+    <title>Pizzeria Don Remolo</title>
     <link rel="shortcut icon" href="images/Favicon-pizza.ico" type="image/x-icon">
     <link rel="stylesheet" href="stylesheet/normalize.css">
     <link rel="stylesheet" href="stylesheet/estilos.css">
 </head>
 
-<body>
+<body class="" id="blureable">
+
     <header class="hero">
         <div class="container nav">
             <div class="hero__logo">
-                <h2 class="hero__title">Pizzeria Don Antonio</h2>
+                <a href="#">
+                    <h2 class="hero__title">Pizzeria Don Remolo</h2>
+                </a>
             </div>
             <ul class="nav__links__menu">
                 <li>
-                    <a href="#" class="nav__links">Productos</a>
+                    <a href="#footer" class="nav__links">Contacto</a>
                 </li>
                 <li class="nav__links__menu__container">
-                    <a href="#" class="nav__links">Pedido</a>
-                    <span class="nav__links__notif oculto">1</span>
+                    <div class="nav__links__notif oculto" id="badge"></div>
+                    <a id="order-button" href="#" class="nav__links">Pedido</a>
                 </li>
             </ul>
         </div>
@@ -40,7 +43,7 @@
                     <img src="images/pizza.svg" alt="" class="product__icon">
                 </div>
                 <div id="pizzas" class="product__meals">
-
+                    Cargando...
                 </div>
             </div>
         </section>
@@ -51,7 +54,7 @@
                     <img src="images/fork.svg" alt="" class="product__icon">
                 </div>
                 <div id="empanadas" class="product__meals">
-
+                    Cargarndo...
                 </div>
             </div>
         </section>
@@ -62,50 +65,85 @@
                     <img src="images/dessert.svg" alt="" class="product__icon">
                 </div>
                 <div id="postres" class="product__meals">
-                    <div class="product__cards">
-                        <img src="images/bombones.jpg" alt="" class="product__card__img">
-                        <h3 class="product__card__subtitle"></h3>
-                    </div>
+                    Cargando...
                 </div>
             </div>
         </section>
+    </main>
 
+    <footer id="footer" class="footer">
+        <div class="footer__title">
+            <h2>DEVELOPED BY:</h2>
+        </div>
+        <div class="container footer__main">
 
-        <div class="modal oculto">
-            <div class="modal__product">
-                <img id="carga-productos-img" src="images/napolitana2.jpg" alt="producto" class="product__img">
+            <div class="footer__dev">
+                <div class="footer__dev__text">
+                    <h3>FRONT-END</h3>
+                    <h3>Alejandro Hroncich</h3>
+                    <h5>Tel.: +54-3548-633835</h5>
+                </div>
+                <div class="footer__dev__social">
+                    <a href="https://www.linkedin.com/in/alejandro-hroncich/" target="_blank">
+                        <img id="social__dev__front:linkedin" src="./images/linkedin.svg" alt="">
+                    </a>
+                    <a href="https://github.com/ahroncich7" target="_blank">
+                        <img id="social__dev__front:github" src="./images/github.svg" alt="">
+                    </a>
+                </div>
             </div>
-            <div class="modal__description">
-                <h4 id="carga-productos-subtitle" class="modal__description__subtitle">Napolitana $900</h4>
-                <p id="carga-productos-descripcion" class="modal__description__paragraph">Ingredientes: Salsa de tomate, Muzza, Tomate, ajo, olivas verdes (8 porciones)</p>
-                <select name="modal__select" class="modal__select">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
+
+            <div class="footer__dev">
+                <div class="footer__dev__text">
+                    <h3>BACK-END</h3>
+                    <h3>Jesus Rios</h3>
+                    <h5>Tel.: +57-3-007154562</h5>
+                </div>
+                <div class="footer__dev__social">
+                    <a href="https://www.linkedin.com/in/jesus-rios-b324a6197/" target="_blank">
+                        <img id="social__dev__back:linkedin" src="./images/linkedin.svg" alt="">
+                    </a>
+                    <a href="https://github.com/ilaoming" target="_blank">
+                        <img id="social__dev__back:github" src="./images/github.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modals">
+        <div id="add-to-order-window" class="modal oculto">
+            <img class="modal__close close" src="images/close.svg">
+            <div class="modal__product">
+                <img id="carga-productos-img" src="images/Napolitana.jpg" alt="producto" class="product__img">
+                <div class="modal__description">
+                    <h4 id="carga-productos-subtitle" class="modal__description__subtitle">Napolitana $900</h4>
+                    <p id="carga-productos-descripcion" class="modal__description__paragraph">Ingredientes: Salsa de tomate, Muzza, Tomate, ajo, olivas verdes (8 porciones)</p>
+
+                </div>
+                <div class="modal__confirm">
+                    <input type="number" min="1" max="100" value="1" id="modal-quantity" class="modal__quantity">
+                    <button class="modal__confirm__button" id="add-to-order-button">Agregar al pedido
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="order-window" class="modal order oculto">
+            <a id="send-order" href="" target="_blank"></a>
+            <img class="modal__close close" src="images/close.svg">
+            <span>CONFIRMA TU PEDIDO!!!</span>
+            <div id="order-board" class="order__board">
             </div>
             <div class="modal__confirm">
-                <button class="modal__confirm__button" name="modal__confirm__button">Agregar al pedido
-                    <img src="images/cart.svg" alt="" class="modal__confirm__icon">
+                <span>Total</span>
+                <span class="total_order_cost" id="total-order-cost" data-total=" "></span>
+                <button data-order=" " class="modal__confirm__button" id="order-confirm-button">Confirmar pedido
                 </button>
             </div>
         </div>
-
-
-    </main>
-
-
-
-
-
-
+    </div>
 
     <script src="main.js" type="module"></script>
 
